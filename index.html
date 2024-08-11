@@ -553,35 +553,41 @@
             </div>
             <div class="col-md-6 to-animate-2">
               <h3>Reservation Form</h3>
-              <div class="form-group">
-                <label for="name" class="sr-only">Name</label>
-                <input id="name" class="form-control" placeholder="Name" type="text" />
-              </div>
-              <div class="form-group">
-                <label for="email" class="sr-only">Email</label>
-                <input id="email" class="form-control" placeholder="Email" type="email" />
-              </div>
-              <div class="form-group">
-                <label for="occation" class="sr-only">Occation</label>
-                <select class="form-control" id="occation">
-                  <option>Select an Occation</option>
-                  <option>Wedding Ceremony</option>
-                  <option>Birthday</option>
-                  <option>Others</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="date" class="sr-only">Date</label>
-                <input id="date" class="form-control" placeholder="Date &amp; Time" type="text" />
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="sr-only">Message</label>
-                <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input class="btn btn-primary" value="Send Message" type="submit" />
-              </div>
+              <form action="https://formspree.io/f/mjkbrajp" method="POST">
+                <div class="form-group">
+                  <label for="name" class="sr-only">Name</label>
+                  <input id="name" class="form-control" placeholder="Name" type="text" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email" class="sr-only">Email</label>
+                  <input id="email" class="form-control" placeholder="Email" type="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="occation" class="sr-only">Occasion</label>
+                  <select class="form-control" id="occation" name="occation" required>
+                    <option value="">Select an Occasion</option>
+                    <option value="Wedding Ceremony">Wedding Ceremony</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Others">Others</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="date" class="sr-only">Date</label>
+                  <input id="date" class="form-control" placeholder="Date &amp; Time" type="text" name="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="message" class="sr-only">Message</label>
+                  <textarea id="message" cols="30" rows="5" class="form-control" placeholder="Message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                  <input class="btn btn-primary" value="Send Message" type="submit" />
+                </div>
+                <!-- Hidden fields to customize the email notification -->
+                <input type="hidden" name="_replyto" value="igede.suadnyana@gmail.com" />
+                <input type="hidden" name="_subject" value="New Reservation Request" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="thank-you.html" />
+              </form>
             </div>
           </div>
         </div>
